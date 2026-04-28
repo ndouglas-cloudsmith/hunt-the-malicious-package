@@ -158,6 +158,11 @@ See if the ```osv-scanner``` was successfully installed:
 osv-scanner --version
 ```
 
+Downloading a sample ```requirements.txt``` file:
+```
+wget https://raw.githubusercontent.com/ndouglas-cloudsmith/malicious-package-policy/refs/heads/main/osv-api/requirements.txt
+```
+
 Scan a local file or directory recursively. In this case, we're going to scan the ```requirements.txt``` file, using the following command:
 ```
 osv-scanner -r requirements.txt
