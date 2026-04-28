@@ -173,7 +173,7 @@ Looking at the output table in this scenario, osv-scanner should have found **MA
 cat requirements.txt | grep --color=always -E "litellm==[^ ]*|$"
 ```
 
-Generating a Software Bill of Materials (SBOM)
+Generate an SBOM with Syft and scan it with OSV
 ===============
 
 Since we are already working with Python, we can use **[Syft](https://github.com/anchore/syft)** to scan your directory and produce a standard format like **[CycloneDX](https://cyclonedx.org)** or **[SPDX](https://spdx.dev)**. You can install Syft with a one-line command:
@@ -200,8 +200,16 @@ jq . sbom.cdx.json
 
 You'll probably notice from the output that this Software Bill of Materials is in **CycloneDX** format with software dependencies (properties) being grouped into **components**, such as ```files``` and ```libraries```.
 
-Scanning SBOMs with OSV-Scanner
+Scanning Lockfiles with OSV-Scanner
 ===============
+
+These apps are now available
+    - ```pip-compile```
+    - ```pip-sync```
+    
+```
+pipx install pip-tools
+```
 
 Once built, you can scan your SBOM with the below command:
 ```
