@@ -223,5 +223,11 @@ pip-compile requirements.in --output-file requirements.txt.lock
 
 Scan ```Lockfile```
 ```
+mv requirements.txt.lock requirements-lock.txt
+osv-scanner -L requirements-lock.txt
+```
+
+So in short, only works for ```JSON``` or ```TXT``` formats:
+```
 osv-scanner --lockfile=package-lock.json
 ```
