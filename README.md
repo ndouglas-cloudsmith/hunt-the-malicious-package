@@ -211,11 +211,17 @@ These apps are now available
 pipx install pip-tools
 ```
 
-Once built, you can scan your SBOM with the below command:
+Download a sample ```requirements.in``` file
 ```
-osv-scanner -L sbom.cdx.json
+wget https://raw.githubusercontent.com/ndouglas-cloudsmith/hunt-the-malicious-package/refs/heads/main/requirements.in
 ```
-Scan Lockfiles
+
+Compile to a Lockfile
+```
+pip-compile requirements.in --output-file requirements.txt.lock
+```
+
+Scan ```Lockfile```
 ```
 osv-scanner --lockfile=package-lock.json
 ```
