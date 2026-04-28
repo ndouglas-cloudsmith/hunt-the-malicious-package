@@ -179,7 +179,7 @@ Generating a Software Bill of Materials (SBOM)
 Since we are already working with Python, we can use **[Syft](https://github.com/anchore/syft)** to scan your directory and produce a standard format like **[CycloneDX](https://cyclonedx.org)** or **[SPDX](https://spdx.dev)**. You can install Syft with a one-line command:
 
 ```
-curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sudo sh -s -- -b /usr/local/bin
 ```
 
 We already started working with the requirements.txt file in the last section. Now let's generate a simple **SBOM** on that requirements.txt file. Use the following command to initiate that process in Syft:
