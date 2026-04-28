@@ -1,4 +1,4 @@
-# hunt-the-malicious-package
+# Hunt The Malicious Package
 Lab for findings malicious packages in SBOM and lockfiles using OSV API
 
 Getting familiar with Open Source Vulnerabilities (OSV)
@@ -230,4 +230,16 @@ osv-scanner -L requirements-lock.txt
 So in short, only works for ```JSON``` or ```TXT``` formats:
 ```
 osv-scanner --lockfile=package-lock.json
+```
+
+License Analysis with OSV-Scanner
+===============
+
+Check your dependencies' licenses using ```deps.dev``` data. For a summary:
+```
+osv-scanner --licenses .
+```
+To check everything in the local directory against an allowed license list (```SPDX``` format):
+```
+osv-scanner --licenses="MIT,Apache-2.0" .
 ```
