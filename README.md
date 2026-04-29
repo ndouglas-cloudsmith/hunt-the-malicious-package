@@ -265,6 +265,7 @@ cd sbom-enrichment
 
 Download the ```sbom enrichment``` script. This python script will scan a container image, generate the SBOM, and enrich the vulnerability intelligence data:
 ```
+rm sbom-enricher.py
 wget https://raw.githubusercontent.com/ndouglas-cloudsmith/hunt-the-malicious-package/refs/heads/main/sbom-enricher.py
 ```
 
