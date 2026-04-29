@@ -253,3 +253,16 @@ https://google.github.io/osv.dev/third-party/#third-party-tools
 ```
 pip-audit --desc -f json 2>/dev/null | jq '.dependencies[] | select(.vulns | length > 0) | {name, version, vulnerabilities: [.vulns[] | {id, fix: .fix_versions[0]}]}'
 ```
+
+SBOM threat intelligence enrichment
+===============
+
+```
+mkdir sbom-enrichment
+cd sbom-enrichment
+```
+
+Cleanup script:
+```
+rm -v -- exploitdb_exploits.csv epss_scores-current.csv epss_scores-current.csv.gz known_exploited_vulnerabilities.json && kubectl delete -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.13/deploy/gatekeeper.yaml
+```
