@@ -263,6 +263,11 @@ mkdir sbom-enrichment
 cd sbom-enrichment
 ```
 
+Download the ```sbom enrichment``` script. This python script will scan a container image, generate the SBOM, and enrich the vulnerability intelligence data:
+```
+https://raw.githubusercontent.com/ndouglas-cloudsmith/hunt-the-malicious-package/refs/heads/main/sbom-enricher.py
+```
+
 The script requires two specific python dependencies - other than the obvious ```grype``` scanner for SBOM generation
 ```
 python3 -m pip install requests rich --break-system-packages
