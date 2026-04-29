@@ -282,7 +282,10 @@ Enrich the SBOM findings for the same **container image** name - **[alpine:lates
 ```
 python3 sbom-enricher.py alpine:latest
 ```
-
+Scanning a known, flawed docker image with a long list of vulnerabilities.
+```
+python3 sbom-enricher.py docker.cloudsmith.io/acme-corporation/acme-repo-one/novnc:latest
+```
 Cleanup script:
 ```
 rm -v -- exploitdb_exploits.csv epss_scores-current.csv epss_scores-current.csv.gz known_exploited_vulnerabilities.json && kubectl delete -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/release-3.13/deploy/gatekeeper.yaml
