@@ -273,7 +273,12 @@ The script requires two specific python dependencies - other than the obvious ``
 python3 -m pip install requests rich --break-system-packages
 ```
 
-Build an SBOM based on a **container image** name - **[alpine:latest](https://hub.docker.com/_/alpine)**
+Generate an SBOM natively in ```CycloneDX``` format using ```Grype```:
+```
+grype alpine:latest -o cyclonedx-json > sbom.json
+```
+
+Enrich the SBOM findings for the same **container image** name - **[alpine:latest](https://hub.docker.com/_/alpine)**
 ```
 python3 sbom-enricher.py alpine:latest
 ```
