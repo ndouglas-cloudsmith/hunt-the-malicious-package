@@ -257,9 +257,20 @@ pip-audit --desc -f json 2>/dev/null | jq '.dependencies[] | select(.vulns | len
 SBOM threat intelligence enrichment
 ===============
 
+Create a directory and test out the script in this folder:
 ```
 mkdir sbom-enrichment
 cd sbom-enrichment
+```
+
+The script requires two specific python dependencies - other than the obvious ```grype``` scanner for SBOM generation
+```
+python3 -m pip install requests rich --break-system-packages
+```
+
+Build an SBOM based on a **container image** name - **[alpine:latest](https://hub.docker.com/_/alpine)**
+```
+python3 enricher.py alpine:latest
 ```
 
 Cleanup script:
