@@ -247,7 +247,8 @@ osv-scanner --licenses="MIT,Apache-2.0" .
 pip-audit is informed by OSV metadata
 ===============
 
-https://github.com/pypa/pip-audit
+There are community tools that use OSV. <br/>
+https://google.github.io/osv.dev/third-party/#third-party-tools
 
 ```
 pip-audit --desc -f json 2>/dev/null | jq '.dependencies[] | select(.vulns | length > 0) | {name, version, vulnerabilities: [.vulns[] | {id, fix: .fix_versions[0]}]}'
