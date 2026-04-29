@@ -275,7 +275,7 @@ python3 -m pip install requests rich --break-system-packages
 
 Build an SBOM based on a **container image** name - **[alpine:latest](https://hub.docker.com/_/alpine)**
 ```
-python3 enricher.py alpine:latest
+python3 sbom-enricher.py alpine:latest
 ```
 
 Cleanup script:
