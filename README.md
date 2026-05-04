@@ -288,3 +288,24 @@ Scanning a known, flawed docker image with a long list of vulnerabilities.
 python3 sbom-enricher.py docker.cloudsmith.io/acme-corporation/acme-repo-one/novnc:latest
 ```
 
+
+Dependency Track
+===============
+```https://dependencytrack.org```
+
+```
+curl -LO https://dependencytrack.org/docker-compose.yml
+docker-compose up -d
+```
+
+```http://localhost:8080/dashboard```
+<br/><br/>
+
+Publishing a CycloneDX formatted SBOM to Dependency Track:
+```
+curl -X "POST" "http://localhost:8081/api/v1/bom" \
+     -H 'Content-Type: multipart/form-data' \
+     -H "X-Api-Key: $DTRACK_API_KEY" \
+     -F "project=42a592e6-8863-4d8f-bec1-2f3a0a433bf9" \
+     -F "bom=@sbom.cdx.json"
+```
