@@ -343,5 +343,5 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -F "autoCreate=true" \
      -F "projectName=ollama" \
      -F "projectVersion=0.1.32" \
-     -F "bom=@ollama_sbom.cdx.json"
+     -F "bom=@ollama_v0.1.32.json"
 ```
