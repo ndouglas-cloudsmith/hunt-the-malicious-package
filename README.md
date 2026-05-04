@@ -341,7 +341,7 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -H 'Content-Type: multipart/form-data' \
      -H "X-Api-Key: $DTRACK_API_KEY" \
      -F "autoCreate=true" \
-     -F "projectName=alpine" \
+     -F "projectName=ollama" \
      -F "projectVersion=latest" \
      -F "bom=@ollama_sbom.cdx.json"
 ```
