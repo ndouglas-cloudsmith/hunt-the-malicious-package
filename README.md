@@ -309,3 +309,21 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -F "project=42a592e6-8863-4d8f-bec1-2f3a0a433bf9" \
      -F "bom=@sbom.cdx.json"
 ```
+
+#### Alpine Linux workflow 
+
+```
+grype alpine:latest -o cyclonedx-json > sbom.json
+```
+
+This automatically creates the alpine project for our **alpine** ```container``` SBOM
+
+```
+curl -X "POST" "http://localhost:8081/api/v1/bom" \
+     -H 'Content-Type: multipart/form-data' \
+     -H "X-Api-Key: $DTRACK_API_KEY" \
+     -F "autoCreate=true" \
+     -F "projectName=alpine" \
+     -F "projectVersion=latest" \
+     -F "bom=@sbom.json"
+```
