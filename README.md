@@ -331,7 +331,7 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
 #### Ollama Docker workflow 
 
 ```
-grype ollama/ollama:latest -o cyclonedx-json > ollama_sbom.cdx.json
+grype ollama/ollama:0.1.32 -o cyclonedx-json > ollama_v0.1.32.json
 ```
 
 This creates a separate ollama project for the **[ollama](https://hub.docker.com/r/ollama/ollama)** ```container``` SBOM
@@ -342,6 +342,6 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -H "X-Api-Key: $DTRACK_API_KEY" \
      -F "autoCreate=true" \
      -F "projectName=ollama" \
-     -F "projectVersion=latest" \
+     -F "projectVersion=0.1.32" \
      -F "bom=@ollama_sbom.cdx.json"
 ```
