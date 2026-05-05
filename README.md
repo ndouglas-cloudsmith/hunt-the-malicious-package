@@ -354,13 +354,23 @@ grype cgr.dev/chainguard/python:latest -o cyclonedx-json > cg_python_latest.json
 
 If you have **[cosign](https://formulae.brew.sh/formula/cosign)** installed, you can pull the official, high-fidelity SBOM directly from their registry. This is much more accurate than a Grype scan:
 ```
-cosign download sbom cgr.dev/chainguard/python:latest > python_official.json
+cosign download attestation \
+  --platform=linux/arm64 \
+  --predicate-type=https://spdx.dev/Document \
+  cgr.dev/chainguard/python:latest | jq -r .payload | base64 -d | jq .predicate > python_official.json
 ```
 
 To see the vulnerability insights, remove the output flags to export the SBOM file:
 ```
 grype cgr.dev/chainguard/python:latest
 ```
+
+You can go further and understand the details of a specific CVE ID via the below grype command:
+```
+grype cgr.dev/chainguard/python:latest -o json | grype explain --id CVE-2026-3298
+```
+
+**Note:** This is a false/positive detection. A buffer overflow in Python's ```asyncio``` module. It's an FP because the vulnerability only affects Windows (specifically the ```ProactorEventLoop```). So why's it in the scan? Chainguard images are Linux-based. Because the python package itself contains the vulnerable code (even if it can't be triggered on Linux), Grype still unfortunately flags it. So we can safely ignore this for my Mac/Linux deployments. In Dependency-Track, you would mark this as ```Not Applicable``` or ```VEX: Justification: Component_not_present``` (meaning the vulnerable execution path isn't possible on this OS).
 
 ```
 curl -X "POST" "http://localhost:8081/api/v1/bom" \
