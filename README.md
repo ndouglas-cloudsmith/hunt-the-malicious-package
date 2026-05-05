@@ -397,3 +397,10 @@ grype python:latest
 
 <img width="1511" height="902" alt="Screenshot 2026-05-05 at 14 56 26" src="https://github.com/user-attachments/assets/d8242ea0-f6aa-4a09-9b7b-9b76a7be16e8" />
 
+In fact, most of these CVEs will never actually be fixed in the community version on **Docker Hub**:
+```
+grype python:latest | grep "(won't fix)"
+```
+
+<img width="1511" height="902" alt="Screenshot 2026-05-05 at 15 00 11" src="https://github.com/user-attachments/assets/544f66f1-7703-473d-8cdf-6f1ae27a28f7" />
+
