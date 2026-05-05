@@ -351,6 +351,16 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
 grype cgr.dev/chainguard/python:latest -o cyclonedx-json > cg_python_latest.json
 ```
 
+If you have **[cosign](https://formulae.brew.sh/formula/cosign)** installed, you can pull the official, high-fidelity SBOM directly from their registry. This is much more accurate than a Grype scan:
+```
+cosign download sbom cgr.dev/chainguard/python:latest > python_official.json
+```
+
+To see the vulnerability insights, remove the output flags to export the SBOM file:
+```
+grype cgr.dev/chainguard/python:latest
+```
+
 ```
 curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -H 'Content-Type: multipart/form-data' \
