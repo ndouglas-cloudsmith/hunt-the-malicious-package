@@ -390,3 +390,10 @@ For the purpose of a free developer workshop, we'll stick with the freely-avaial
 
 <img width="1508" height="744" alt="Screenshot 2026-05-05 at 12 11 49" src="https://github.com/user-attachments/assets/210ee308-914e-4f53-a413-b9cd5e9523e9" />
 
+This is considerably safer than using the generic latest image from **[Docker Hub](https://hub.docker.com/_/python)**:
+```
+grype python:latest
+```
+
+<img width="1511" height="902" alt="Screenshot 2026-05-05 at 14 56 26" src="https://github.com/user-attachments/assets/d8242ea0-f6aa-4a09-9b7b-9b76a7be16e8" />
+
