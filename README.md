@@ -372,6 +372,9 @@ grype cgr.dev/chainguard/python:latest -o json | grype explain --id CVE-2026-329
 
 **Note:** This is a false/positive detection. A buffer overflow in Python's ```asyncio``` module. It's an FP because the vulnerability only affects Windows (specifically the ```ProactorEventLoop```). So why's it in the scan? Chainguard images are Linux-based. Because the python package itself contains the vulnerable code (even if it can't be triggered on Linux), Grype still unfortunately flags it. So we can safely ignore this for my Mac/Linux deployments. In Dependency-Track, you would mark this as ```Not Applicable``` or ```VEX: Justification: Component_not_present``` (meaning the vulnerable execution path isn't possible on this OS).
 
+<img width="1511" height="431" alt="Screenshot 2026-05-05 at 12 25 19" src="https://github.com/user-attachments/assets/b6602bc7-3989-4f1b-b41e-27f6b57df385" />
+
+
 ```
 curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -H 'Content-Type: multipart/form-data' \
