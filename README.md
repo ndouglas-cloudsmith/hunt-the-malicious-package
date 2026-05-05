@@ -404,3 +404,18 @@ grype python:latest | grep "(won't fix)"
 
 <img width="1511" height="902" alt="Screenshot 2026-05-05 at 15 00 11" src="https://github.com/user-attachments/assets/544f66f1-7703-473d-8cdf-6f1ae27a28f7" />
 
+Even filter for **HIGH** and **CRITICAL** vulnerabilities, we still have a huge list of vulnerabilities that are not going to be fixed:
+```
+grype python:latest | grep "(won't fix)" | grep -E "High|Critical"
+```
+
+<img width="1511" height="1253" alt="Screenshot 2026-05-05 at 15 03 33" src="https://github.com/user-attachments/assets/8560fc92-8e2b-4321-8c81-ca2b7a1b18ed" />
+
+Meanwhile, the only remaining CVEs for the Chainguard hardened image are vulnerabilities that have yet to be fixed.
+```
+grype cgr.dev/chainguard/python:latest --only-fixed
+```
+
+<img width="1511" height="512" alt="Screenshot 2026-05-05 at 15 06 08" src="https://github.com/user-attachments/assets/41f95e12-8c02-4201-a203-8b9891619c0b" />
+
+
