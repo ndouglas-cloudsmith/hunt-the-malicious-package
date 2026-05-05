@@ -359,6 +359,8 @@ cosign download attestation \
   --predicate-type=https://spdx.dev/Document \
   cgr.dev/chainguard/python:latest | jq -r .payload | base64 -d | jq .predicate > python_official.json
 ```
+This creates a **[SPDXRef-DOCUMENT](https://github.com/ndouglas-cloudsmith/hunt-the-malicious-package/blob/main/python_official.json)** file. ```SPDXRef-DOCUMENT``` is a mandatory, unique identifier in SPDX documents representing the entire SBOM file itself. It acts as the anchor point for relationships, typically used to declare which package or file the document describes.
+<br/><br/>
 
 To see the vulnerability insights, remove the output flags to export the SBOM file:
 ```
