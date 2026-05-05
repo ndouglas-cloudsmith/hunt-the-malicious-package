@@ -345,3 +345,18 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -F "projectVersion=0.1.32" \
      -F "bom=@ollama_v0.1.32.json"
 ```
+
+#### Chainguard Image workflow
+```
+grype cgr.dev/chainguard/ollama:latest -o cyclonedx-json > cg_ollama_latest.json
+```
+
+```
+curl -X "POST" "http://localhost:8081/api/v1/bom" \
+     -H 'Content-Type: multipart/form-data' \
+     -H "X-Api-Key: $DTRACK_API_KEY" \
+     -F "autoCreate=true" \
+     -F "projectName=ollama-chainguard" \
+     -F "projectVersion=latest" \
+     -F "bom=@cg_ollama_latest.json"
+```
