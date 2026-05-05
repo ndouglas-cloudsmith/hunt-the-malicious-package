@@ -348,7 +348,7 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
 
 #### Chainguard Image workflow
 ```
-grype cgr.dev/chainguard/ollama:latest -o cyclonedx-json > cg_ollama_latest.json
+grype cgr.dev/chainguard/python:latest -o cyclonedx-json > cg_python_latest.json
 ```
 
 ```
@@ -356,7 +356,23 @@ curl -X "POST" "http://localhost:8081/api/v1/bom" \
      -H 'Content-Type: multipart/form-data' \
      -H "X-Api-Key: $DTRACK_API_KEY" \
      -F "autoCreate=true" \
-     -F "projectName=ollama-chainguard" \
+     -F "projectName=python-chainguard" \
      -F "projectVersion=latest" \
-     -F "bom=@cg_ollama_latest.json"
+     -F "bom=@cg_python_latest.json"
+```
+
+There was an error trying to pull licensed chaingaurd images without being a customer. Sticking with freely-avaialable python base image:
+
+```
+grype cgr.dev/chainguard/ollama:latest -o cyclonedx-json > cg_ollama_latest.json
+ ✔ Vulnerability DB                [updated]  
+A newer version of grype is available for download: 0.112.0 (installed version is 0.100.0)
+[0026] ERROR failed to catalog: errors occurred attempting to resolve 'cgr.dev/chainguard/ollama:latest':
+  - snap: snap file "cgr.dev/chainguard/ollama:latest" does not exist
+  - docker: pull failed: Error response from daemon: error from registry: Forbidden
+  - podman: podman not available: no host address
+  - containerd: containerd not available: no grpc connection or services is available: unavailable
+  - oci-registry: failed to get image descriptor from registry: GET https://cgr.dev/token?scope=repository%3Achainguard%2Follama%3Apull&service=cgr.dev: FORBIDDEN: Forbidden
+  - snap: no snap found with name 'cgr.dev/chainguard/ollama:latest'
+  - additionally, the following providers failed with file does not exist: docker-archive, oci-archive, oci-dir, singularity, oci-dir, local-file, local-directory
 ```
