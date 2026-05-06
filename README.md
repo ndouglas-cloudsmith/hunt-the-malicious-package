@@ -439,10 +439,10 @@ grype python:latest --only-fixed
 ```
 
 Dozens of direct software dependencies within this Python container image, each pulling in their own transitive dependnecies.<br/> 
-SBOM helps us compare fix availability between versioning odf these dependencies.
-<br/><br/>
+SBOM helps us compare fix availability between versioning odf these dependencies.<br/>
 
-Many of these dependencies simply will not be fixed - and that's a harsh reality of software development and how we consume open-source software libraries.
+Many of these dependencies simply **will not be fixed**
+and that's just the harsh reality of software development and how we consume open-source software libraries.
 ```
 grype python:latest | grep "(won't fix)"
 ```
