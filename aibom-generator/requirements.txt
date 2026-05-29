@@ -120,9 +120,9 @@ multidict==6.7.1
     #   yarl
 multiprocess==0.70.19
     # via datasets
-#  networkx==3.6.1
+networkx
     # via torch
-numpy==2.4.4
+numpy
     # via
     #   datasets
     #   pandas
