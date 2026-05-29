@@ -1,0 +1,138 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:9bce3563-a86a-4a8b-bf43-2925cc12db7f",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-05-29T20:57:26+00:00",
+    "tools": {
+      "components": [
+        {
+          "bom-ref": "pkg:generic/owasp-genai/owasp-aibom-generator@1.0.2",
+          "type": "application",
+          "name": "owasp-aibom-generator",
+          "version": "1.0.2",
+          "manufacturer": {
+            "name": "OWASP GenAI Security Project"
+          }
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "pkg:generic/OWASP-AIBOM-Generator/job-2026-05-29-20:57:26@1780088246",
+      "type": "application",
+      "name": "job-2026-05-29-20:57:26",
+      "description": "Generating SBOM for Pankaj001/malicious-artifact",
+      "version": "1780088246",
+      "purl": "pkg:generic/OWASP-AIBOM-Generator/job-2026-05-29-20:57:26@1780088246",
+      "manufacturer": {
+        "name": "OWASP AIBOM Generator"
+      },
+      "supplier": {
+        "name": "OWASP AIBOM Generator"
+      }
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:huggingface/Pankaj001/malicious-artifact@a5f12efe",
+      "type": "machine-learning-model",
+      "group": "Pankaj001",
+      "name": "malicious-artifact",
+      "version": "a5f12efe",
+      "purl": "pkg:huggingface/Pankaj001/malicious-artifact@a5f12efe",
+      "description": "No description available",
+      "modelCard": {
+        "modelParameters": {
+          "task": "text-generation",
+          "modelArchitecture": "qwen2",
+          "inputs": [
+            {
+              "format": "string"
+            }
+          ],
+          "outputs": [
+            {
+              "format": "string"
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "genai:aibom:modelcard:hyperparameter",
+            "value": "{\"context_length\": 32768, \"embedding_length\": 1024, \"block_count\": 24, \"attention_head_count\": 16, \"attention_head_count_kv\": 16, \"feed_forward_length\": 2816}"
+          },
+          {
+            "name": "genai:aibom:modelcard:vocabSize",
+            "value": "151936"
+          },
+          {
+            "name": "genai:aibom:modelcard:tokenizerClass",
+            "value": "gpt2"
+          },
+          {
+            "name": "genai:aibom:modelcard:contextLength",
+            "value": "32768"
+          },
+          {
+            "name": "genai:aibom:modelcard:quantizationVersion",
+            "value": "2"
+          },
+          {
+            "name": "genai:aibom:modelcard:quantizationFileType",
+            "value": "10"
+          },
+          {
+            "name": "serialNumber",
+            "value": "urn:uuid:Pankaj001-malicious-artifact"
+          }
+        ]
+      },
+      "manufacturer": {
+        "name": "Pankaj001",
+        "url": [
+          "https://huggingface.co/Pankaj001"
+        ]
+      },
+      "supplier": {
+        "name": "Pankaj001"
+      },
+      "authors": [
+        {
+          "name": "Pankaj001"
+        }
+      ],
+      "properties": [
+        {
+          "name": "model_type",
+          "value": "qwen2"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://huggingface.co/Pankaj001/malicious-artifact",
+          "comment": "Model repository"
+        },
+        {
+          "type": "distribution",
+          "url": "https://huggingface.co/Pankaj001/malicious-artifact/tree/main",
+          "comment": "Model files"
+        },
+        {
+          "type": "vcs",
+          "url": "https://huggingface.co/Pankaj001/malicious-artifact/commit/a5f12efe3c2ea5ce9501d8dba62b5738ca77b2d3",
+          "comment": "Specific commit"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/Pankaj001/malicious-artifact@a5f12efe",
+      "dependsOn": [
+        "pkg:huggingface/Pankaj001/malicious-artifact@a5f12efe"
+      ]
+    }
+  ]
+}
