@@ -1,0 +1,61 @@
+[project]
+name = "slopgate-enterprise-test-suite"
+version = "2.0.0"
+description = "Comprehensive test manifest with a dense package list to evaluate pipeline signals."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # ====================================================
+    # 1. VERDICT: OK (Legitimate, highly popular packages)
+    # ====================================================
+    # --- AI & LLM Ecosystem ---
+    "litellm>=1.34.0",
+    "openai>=1.14.0",
+    "langchain>=0.1.12",
+    "transformers>=4.38.0",
+    "torch>=2.2.0",
+    
+    # --- Web Frameworks & APIs ---
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "django>=5.0.3",
+    "flask>=3.0.2",
+    "httpx>=0.27.0",
+    
+    # --- Data Science & Utilities ---
+    "numpy>=1.26.0",
+    "pandas>=2.2.1",
+    "pydantic>=2.6.4",
+    "cryptography>=42.0.5",
+    "click>=8.1.7",
+    "boto3>=1.34.0",
+    "pyyaml>=6.0.1",
+
+    # ====================================================
+    # 2. VERDICT: BLOCK (High-probability Slopsquats & Typos)
+    # ====================================================
+    # --- Target: litellm ---
+    "litelm>=1.34.0",         # Missing an 'l' — classic typo-squatting signature
+    "litellm-secure>=1.0.0",  # Fake "security wrapper" that does not exist on PyPI
+    
+    # --- Target: openai ---
+    "open-ai>=1.14.0",        # Hyphenated variation; doesn't exist on the registry
+    
+    # --- Target: langchain ---
+    "langchian>=0.1.12",      # Transposed letters 'ia' instead of 'ai'
+    
+    # --- Target: pydantic / cryptography ---
+    "pidantic>=2.6.4",        # Phonetic typo swap ('i' for 'y')
+    "cryptograhpy>=42.0.5",   # Missing 'h' typo
+    
+    # --- Pure Hallucinations (No registry existence) ---
+    "llm-optimizer-utility>=0.1.0",
+    "boto4-connector>=1.0.0",
+
+    # ====================================================
+    # 3. VERDICT: WARN (Looks like popular packages, but exist)
+    # ====================================================
+    "open-apis>=0.1.0",       # Resembles 'openai' patterns, but is a real, niche package
+    "pandy>=0.0.1",           # Proximity warning flag for 'pandas'
+    "fast-api>=0.1.0",        # Resembles 'fastapi' corpus but maps to a real, abandoned library
+]
