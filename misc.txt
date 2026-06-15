@@ -1,0 +1,6 @@
+https://github.com/nullracodes/slopgate
+https://github.com/NVIDIA/SkillSpector/tree/main
+https://google.github.io/osv-scanner/usage/scan-image
+https://github.com/openclaw/clawhub/tree/main/.agents/skills
+
+techdocs-cli-embedded-app #MAL-2022-6445
