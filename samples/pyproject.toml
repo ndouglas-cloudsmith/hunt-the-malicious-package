@@ -21,7 +21,8 @@ dependencies = [
     "django>=5.0.3",
     "flask>=3.0.2",
     "httpx>=0.27.0",
-    
+    "chainguard>=3.0.2",
+
     # --- Data Science & Utilities ---
     "numpy>=1.26.0",
     "pandas>=2.2.1",
@@ -30,6 +31,7 @@ dependencies = [
     "click>=8.1.7",
     "boto3>=1.34.0",
     "pyyaml>=6.0.1",
+    "mendio>=1.0.0",
 
     # ====================================================
     # 2. VERDICT: BLOCK (High-probability Slopsquats & Typos)
