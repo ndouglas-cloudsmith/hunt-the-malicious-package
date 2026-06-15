@@ -17,6 +17,7 @@ dependencies = [
     
     # --- Web Frameworks & APIs ---
     "fastapi>=0.110.0",
+    "reuests>=0.0.1",
     "uvicorn>=0.28.0",
     "django>=5.0.3",
     "flask>=3.0.2",
