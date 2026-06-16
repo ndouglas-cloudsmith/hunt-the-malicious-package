@@ -1,0 +1,108 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:adab36a3-afdc-49f3-9249-deb2fc5f53c8",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-06-16T13:58:28+00:00",
+    "tools": {
+      "components": [
+        {
+          "bom-ref": "pkg:generic/owasp-genai/owasp-aibom-generator@1.0.2",
+          "type": "application",
+          "name": "owasp-aibom-generator",
+          "version": "1.0.2",
+          "manufacturer": {
+            "name": "OWASP GenAI Security Project"
+          }
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "pkg:generic/OWASP-AIBOM-Generator/job-2026-06-16-13:58:28@1781618308",
+      "type": "application",
+      "name": "job-2026-06-16-13:58:28",
+      "description": "Generating SBOM for mcpotato/42-eicar-street",
+      "version": "1781618308",
+      "purl": "pkg:generic/OWASP-AIBOM-Generator/job-2026-06-16-13:58:28@1781618308",
+      "manufacturer": {
+        "name": "OWASP AIBOM Generator"
+      },
+      "supplier": {
+        "name": "OWASP AIBOM Generator"
+      }
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:huggingface/mcpotato/42-eicar-street@8fb61c4d",
+      "type": "machine-learning-model",
+      "group": "mcpotato",
+      "name": "42-eicar-street",
+      "version": "8fb61c4d",
+      "purl": "pkg:huggingface/mcpotato/42-eicar-street@8fb61c4d",
+      "description": "No description available",
+      "modelCard": {
+        "modelParameters": {
+          "task": "text-generation",
+          "modelArchitecture": "transformer",
+          "inputs": [
+            {
+              "format": "string"
+            }
+          ],
+          "outputs": [
+            {
+              "format": "string"
+            }
+          ]
+        },
+        "properties": [
+          {
+            "name": "serialNumber",
+            "value": "urn:uuid:mcpotato-42-eicar-street"
+          }
+        ]
+      },
+      "manufacturer": {
+        "name": "mcpotato",
+        "url": [
+          "https://huggingface.co/mcpotato"
+        ]
+      },
+      "supplier": {
+        "name": "mcpotato"
+      },
+      "authors": [
+        {
+          "name": "mcpotato"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://huggingface.co/mcpotato/42-eicar-street",
+          "comment": "Model repository"
+        },
+        {
+          "type": "distribution",
+          "url": "https://huggingface.co/mcpotato/42-eicar-street/tree/main",
+          "comment": "Model files"
+        },
+        {
+          "type": "vcs",
+          "url": "https://huggingface.co/mcpotato/42-eicar-street/commit/8fb61c4d511e9aaff0ea55396a124aa292830efc",
+          "comment": "Specific commit"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/mcpotato/42-eicar-street@8fb61c4d",
+      "dependsOn": [
+        "pkg:huggingface/mcpotato/42-eicar-street@8fb61c4d"
+      ]
+    }
+  ]
+}
