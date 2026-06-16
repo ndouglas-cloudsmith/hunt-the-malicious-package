@@ -3,7 +3,7 @@ import urllib.request
 import sys
 
 # --- Password Protection ---
-PASSWORD = "MAL-2022-7441"
+PASSWORD = "3e4a22bb7e6b2c38b7809234b3ee782b"
 
 def download_reward():
     reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/reward3.txt"
