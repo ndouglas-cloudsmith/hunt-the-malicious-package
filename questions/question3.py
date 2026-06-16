@@ -17,7 +17,7 @@ def download_reward():
 
 def password_protected():
     try:
-        print("🚪 To access the second fragment, provide the the XYZ of the AI Models AIBOM.")
+        print("🚪 To access the third fragment, provide the the sensitive Github credentials exposed in the open source AI Model.")
         
         user_input = input("Password: ") 
         
