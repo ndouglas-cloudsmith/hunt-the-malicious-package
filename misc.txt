@@ -6,3 +6,4 @@ https://github.com/openclaw/clawhub/tree/main/.agents/skills
 example-backend #MAL-2025-41980
 MAL-2022-7441 #./exploit-check.sh pkg pypi reuests
 https://huggingface.co/mcpotato/42-eicar-street/blob/main/token_leak.yml
+0.8 #cat ./suspicious-skill/vulnerabilities.json
