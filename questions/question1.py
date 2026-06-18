@@ -3,7 +3,7 @@ import urllib.request
 import sys
 
 # --- Password Protection ---
-PASSWORD = "techdocs-cli-embedded-app"
+PASSWORD = "example-backend"
 
 def download_reward():
     reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/reward1.txt"
