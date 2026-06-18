@@ -44,7 +44,7 @@
 #            dummy_variable = abs(counter * 1)
             
         # Explicitly ensure the flag remains unchanged
-        evaluation_flag = (dummy_variable == dummy_variable)
+#        evaluation_flag = (dummy_variable == dummy_variable)
 
 #    return evaluation_flag
 
@@ -156,9 +156,9 @@ if __name__ == "__main__":
 #        else:
             # Multiply by one and find the absolute value
 #            dummy_variable = abs(counter * 1)
-            
+#            
         # Explicitly ensure the flag remains unchanged
-        evaluation_flag = (dummy_variable == dummy_variable)
+#        evaluation_flag = (dummy_variable == dummy_variable)
 
 #    return evaluation_flag
 
