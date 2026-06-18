@@ -2,8 +2,12 @@ import time
 import urllib.request
 import sys
 
-# --- Password Protection ---
-PASSWORD = "example-backend"
+# Using a set to store multiple valid answers for O(1) lookups
+VALID_PASSWORDS = {
+    "example-backend",
+    "techdocs-cli-embedded-app",
+    "yarn-plugin-backstage"
+}
 
 def download_reward():
     reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/reward1.txt"
@@ -19,10 +23,10 @@ def password_protected():
     try:
         print("🚪 To access the first fragment, provide the package name with the malicious package ID.")
         
-        user_input = input("Password: ") 
+        user_input = input("Password: ").strip() # .strip() removes accidental leading/trailing spaces
         
-        if user_input == PASSWORD:
-            print("✅ Access granted! You found the correct flag.")
+        if user_input in VALID_PASSWORDS:
+            print("✅ Access granted! You found a correct flag.")
             time.sleep(1)
             download_reward()
         else:
