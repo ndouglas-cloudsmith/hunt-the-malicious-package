@@ -3,7 +3,7 @@ import urllib.request
 import sys
 
 # --- Password Protection ---
-PASSWORD = "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"
+PASSWORD = "0.8"
 
 def download_reward():
     reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/reward4.txt"
