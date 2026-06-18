@@ -1,5 +1,5 @@
-# Hunt The Malicious Package
-Lab for findings malicious packages in SBOM and lockfiles using OSV API
+# Hunt the malicious package
+Lab for findings malicious packages in ```SBOM``` and ```lockfiles``` using the ```OSV``` API
 
 Getting familiar with Open Source Vulnerabilities (OSV)
 ===============
